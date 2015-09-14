@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+<?php session_start(); 
+
+include("php/db.php");
+
+?><!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -23,13 +27,74 @@
 
     <!-- early loading scripts -->
     <script src="js/modernizr.min.js"></script>
+
   </head>
   <body>
-    <h1>Hello, world!</h1>
+
+    <header>
+
+      <h1>Hello, world!</h1>
+
+      <?php include("php/menu.php"); ?>
+
+    </header>
+
+    <section>
+
+      <article>
+
+        <?php 
+
+        //sanitize() functionw as defined at top of page in db.php
+        $state = sanitize($_GET['state']);
+        switch($state) {
+          case "home":
+            if(is_logged_in()) {
+              require("php/home.php");
+            } else {
+              require("php/welcome.php");
+            }
+            break;
+          case "register":
+            if(!is_logged_in()) {
+              require("php/registration.php");
+            } else {
+              require("php/home.php");
+            }
+            break;
+          case "login":
+            if(!is_logged_in()) {
+              require("php/login.php");
+            } else {
+              require("php/home.php");
+            }
+            break;
+          case "post":
+            if(is_logged_in()) {
+              require("php/posts.php");
+            }
+            break;
+          default:
+          if($state === false) {
+            echo "unrecognized state=".$state;
+          }
+            break;
+        }
+        
+        ?>
+
+      </article>
+      
+    </section>
+
+    <footer>
+
+    </footer>
 
     <!-- jQuery file -->
     <script src="js/jquery.min.js"></script>
     <!-- Bootstrap js file -->
     <script src="js/bootstrap.min.js"></script>
+
   </body>
 </html>
