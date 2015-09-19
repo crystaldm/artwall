@@ -1,16 +1,15 @@
+@import "compass/css3";
+
 /* general */
-/* line 4, ../sass/artwall.scss */
 .wrapper {
   margin: 2em;
 }
 
 /* general */
-/* line 9, ../sass/artwall.scss */
 h1 {
   color: #ff4d4d;
 }
 
-/* line 13, ../sass/artwall.scss */
 p {
   font-family: 'Open Sans', sans-serif;
   font-size: 1.5em;
@@ -18,25 +17,21 @@ p {
 }
 
 /* navigation */
-/* line 20, ../sass/artwall.scss */
 #main-nav {
   background-color: #333333;
 }
 
-/* line 24, ../sass/artwall.scss */
 #main-nav ul {
   padding: 0;
   margin: 0;
 }
 
-/* line 29, ../sass/artwall.scss */
 #main-nav ul li {
   list-style: none;
   display: inline-block;
   width: 7em;
 }
 
-/* line 35, ../sass/artwall.scss */
 #main-nav ul li a {
   display: block;
   text-decoration: none;
@@ -46,21 +41,20 @@ p {
   font-weight: 300;
   line-height: 2.5em;
   text-align: center;
-}
-/* line 45, ../sass/artwall.scss */
-#main-nav ul li a:hover {
-  background-color: #191919;
-  display: block;
-  text-decoration: none;
-  color: #fff;
-}
-/* line 52, ../sass/artwall.scss */
-#main-nav ul li a:active {
-  background-color: #191919;
+
+  &:hover {
+    background-color: #191919;
+    display: block;
+    text-decoration: none;
+    color: #fff;
+  }
+
+  &:active {
+    background-color: #191919;
+  }
 }
 
 /* welcome splash screen */
-/* line 58, ../sass/artwall.scss */
 #welcome-splash {
   width: 80%;
   margin: 0 auto;
@@ -69,29 +63,24 @@ p {
 }
 
 /* form */
-/* line 66, ../sass/artwall.scss */
 label {
   display: block;
   margin-top: 1em;
 }
 
-/* line 71, ../sass/artwall.scss */
 #submit {
   margin-top: 1em;
 }
 
 /* user profile */
-/* line 76, ../sass/artwall.scss */
 #user-header {
   margin-bottom: 4em;
 }
 
-/* line 80, ../sass/artwall.scss */
 #friends-list {
   margin-bottom: 4em;
 }
 
-/* line 84, ../sass/artwall.scss */
 #user-recent-posts p {
   font-size: 1em;
 }

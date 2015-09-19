@@ -17,6 +17,9 @@
 		</fieldset> <!-- end fieldset -->
 
 		<fieldset>
+			<label for="remember-me">
+				<input type="checkbox"> Remember me
+			</label>
 			<button type="button">Login</button>
 		</fieldset>
 

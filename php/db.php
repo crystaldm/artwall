@@ -1,18 +1,18 @@
 <?php
 
-$conn = NULL;
+// $conn = NULL;
 
 //check for form submission
-if(isset($_POST)) {
-	if(isset($_POST['lazy-email']) && isset($_POST['lazy_password'])) {
-		//both reg and login share the above fields. now differenciate
-		if(isset($_POST['lazy-password-conf'])) {
-			register();
-		} else {
-			login();
-		}
-	}
-}
+// if(isset($_POST)) {
+// 	// if(isset($_POST['lazy-email']) && isset($_POST['lazy_password'])) {
+// 	// 	//both reg and login share the above fields. now differenciate
+// 	// 	if(isset($_POST['lazy-password-conf'])) {
+// 	// 		register();
+// 	// 	} else {
+// 	// 		login();
+// 	// 	}
+// 	// }
+// }
 
 /**
 * @method is_logged_in
@@ -20,11 +20,13 @@ if(isset($_POST)) {
 * @returns {Boolean} if variable exists, return true, else false
 */
 function is_logged_in() {
-	if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
-		return true;
-	} else {
-		return false;
-	}
+	return true;
+	echo "in::is_logged_in()";
+	// if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
+	// 	return true;
+	// } else {
+	// 	return false;
+	// }
 }
 
 /**
@@ -47,16 +49,16 @@ function sanitize($var) {
 * @description connect to database
 */
 function db_connect() {
-	global $conn; //have to declare global vars in functions
-	$conn = mysqli_connect("localhost","artwall","artwall","artwall");
-
-	// Check connection
-	if (mysqli_connect_errno())
-	  {
-		  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-		  return false;
-	  }
-	  return true;
+	// global $conn; //have to declare global vars in functions
+	// $conn = mysqli_connect("localhost","artwall","artwall","artwall");
+	//
+	// // Check connection
+	// if (mysqli_connect_errno())
+	//   {
+	// 	  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+	// 	  return false;
+	//   }
+	//   return true;
 }
 
 /**
@@ -64,9 +66,9 @@ function db_connect() {
 * @description disconnect from database
 */
 function db_disconnect() {
-	global $conn;
-	mysqli_close($conn);
-	$conn = NULL;
+	// global $conn;
+	// mysqli_close($conn);
+	// $conn = NULL;
 }
 
 /**
@@ -74,11 +76,11 @@ function db_disconnect() {
 * @description register a new user
 */
 function register() {
-	$name = sanitize($_POST['lazy-name']);
-	$email = sanitize($_POST['lazy-email']);
-	$password = sanitize($_POST['lazy-password']);
-	$password_conf = sanitize($_POST['lazy-password-conf']);
-	//create new user record, add info
+	// $name = sanitize($_POST['lazy-name']);
+	// $email = sanitize($_POST['lazy-email']);
+	// $password = sanitize($_POST['lazy-password']);
+	// $password_conf = sanitize($_POST['lazy-password-conf']);
+	// //create new user record, add info
 }
 
 /**
@@ -86,19 +88,19 @@ function register() {
 * @description login to existing account, via a form
 */
 function login() {
-	$email = sanitize($_POST['lazy-email']);
-	$password = sanitize($_POST['lazy-password']);
-	//check email and password, log in if OK
-	if(db_connect()) {
-		$sql = "SELECT * FROM Users WHERE email=$email AND password=$password";
-		$query = mysqli_query($con, $strSQL);
-		//if it exists, we will enter the while() loop
-		while($result = mysqli_fetch_array($query)) {
-			//echo "Username:".$result["username"]; //DEBUG ONLY!!!
-			$_SESSION['logged_in'] = true; //this is what is used by function is_logged_in();
-		}
-	}
-	db_disconnect();
+	// $email = sanitize($_POST['lazy-email']);
+	// $password = sanitize($_POST['lazy-password']);
+	// //check email and password, log in if OK
+	// if(db_connect()) {
+	// 	$sql = "SELECT * FROM Users WHERE email=$email AND password=$password";
+	// 	$query = mysqli_query($con, $strSQL);
+	// 	//if it exists, we will enter the while() loop
+	// 	while($result = mysqli_fetch_array($query)) {
+	// 		//echo "Username:".$result["username"]; //DEBUG ONLY!!!
+	// 		$_SESSION['logged_in'] = true; //this is what is used by function is_logged_in();
+	// 	}
+	// }
+	// db_disconnect();
 }
 
 /**

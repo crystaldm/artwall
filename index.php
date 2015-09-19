@@ -1,4 +1,4 @@
-<?php session_start(); 
+<?php session_start();
 
 include("php/db.php");
 
@@ -14,9 +14,12 @@ include("php/db.php");
     <!-- Bootstrap css stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
-        <!-- ArtWall css stylesheet -->
+    <!-- ArtWall css stylesheet -->
     <link href="css/artwall.css" rel="stylesheet">
 
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,700,300,500' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -31,65 +34,75 @@ include("php/db.php");
   </head>
   <body>
 
-    <header>
+    <div class="wrapper">
 
-      <h1>Hello, world!</h1>
+      <header>
 
-      <?php include("php/menu.php"); ?>
+        <h1>Artwall. A place for asshats.</h1>
 
-    </header>
 
-    <section>
+        <!-- change to if logged in show user menu -->
+        <?php include("php/menu.php"); ?>
 
-      <article>
+      </header>
 
-        <?php 
+      <section>
 
-        //sanitize() functionw as defined at top of page in db.php
-        $state = sanitize($_GET['state']);
-        switch($state) {
-          case "home":
-            if(is_logged_in()) {
-              require("php/home.php");
-            } else {
-              require("php/welcome.php");
-            }
-            break;
-          case "register":
-            if(!is_logged_in()) {
-              require("php/registration.php");
-            } else {
-              require("php/home.php");
-            }
-            break;
-          case "login":
-            if(!is_logged_in()) {
-              require("php/login.php");
-            } else {
-              require("php/home.php");
-            }
-            break;
-          case "post":
-            if(is_logged_in()) {
-              require("php/posts.php");
-            }
-            break;
-          default:
-          if($state === false) {
-            echo "unrecognized state=".$state;
-          }
-            break;
-        }
-        
-        ?>
+        <article>
 
-      </article>
-      
-    </section>
+          <?php
 
-    <footer>
+          // //sanitize() function was defined at top of page in db.php
+          // $state = sanitize($_GET['state']);
+          // switch($state) {
+          //   case "home":
+          //     if(is_logged_in()) {
+          //       require("php/home.php");
+          //     } else {
+          //       require("php/welcome.php");
+          //     }
+          //     break;
+          //   case "register":
+          //     if(!is_logged_in()) {
+          //       require("php/registration.php");
+          //     } else {
+          //       require("php/home.php");
+          //     }
+          //     break;
+          //   case "login":
+          //     if(!is_logged_in()) {
+          //       require("php/login.php");
+          //     } else {
+          //       require("php/home.php");
+          //     }
+          //     break;
+          //   case "post":
+          //     if(is_logged_in()) {
+          //       require("php/posts.php");
+          //     }
+          //     break;
+          //   default:
+          //   if($state === false) {
+          //     echo "unrecognized state=".$state;
+          //   }
+          //     break;
+          // }
 
-    </footer>
+          ?>
+
+          <?php include("php/home.php"); ?>
+
+        </article>
+
+      </section>
+
+      <footer>
+
+      </footer>
+
+    </div>
+
+
 
     <!-- jQuery file -->
     <script src="js/jquery.min.js"></script>

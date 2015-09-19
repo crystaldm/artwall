@@ -1,8 +1,10 @@
 <!-- registration -->
 
+<p>Register for Artwall! It's asshat easy!</p>
+
 <section id="registration">
 	<!-- lazy registration form -->
-	<form id="lazy-registration" method="post" action="#">
+	<form id="lazy-registration" class="navbar-form navbar-left" method="post" action="#">
 
 		<!-- fieldset name and email -->
 		<fieldset>
@@ -20,7 +22,7 @@
 				<input type="text" name="lazy-password-conf" id="lazy-password-conf" value="">
 		</fieldset> <!-- end fieldset -->
 
-		<fieldset>
+		<fieldset id="submit">
 			<button type="button">Submit</button>
 		</fieldset>
 

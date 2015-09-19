@@ -2,89 +2,71 @@
 
 <div>
 
-	<!-- user name -->
-	<h2>Put User Name Here</h2>
+	<section id="user-header">
 
-	<!-- user picture -->
-	<div>
+		<!-- user name -->
+		<h2>Put User Name Here</h2>
 
-		<img width="200" height="150" alt="user picture">
+		<!-- user picture -->
+		<div id="profile-picture">
 
-	</div>
-	
-	<!-- user personal data -->
-	<div>
-		Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses 
-		differently than mine. You don't get sick, I do. That's also clear. But for some reason, 
-		you and I react the exact same way to water. We swallow it too fast, we choke. 
-		We get some in our lungs, we drown. However unreal it may seem, we are connected, you and I.
-		 We're on the same curve, just on opposite ends.
-	</div>
+			<img src="http://placehold.it/200x200" class="img-circle" width="200" height="200" alt="profile picture" />
+
+		</div>
+
+	</section>
 
 	<!-- user friends list -->
-	<div>
+	<div id="friends-list">
 
 		<h2>Friends</h2>
 
-		<table>
-			<tr>
-				<td><img width="60" height="60" alt="a friend"></td>
-				<td><img width="60" height="60" alt="a friend"></td>
-				<td><img width="60" height="60" alt="a friend"></td>
-				<td><img width="60" height="60" alt="a friend"></td>
-			</tr>
-			<tr>
-				<td><img width="60" height="60" alt="a friend"></td>
-				<td><img width="60" height="60" alt="a friend"></td>
-				<td><img width="60" height="60" alt="a friend"></td>
-				<td><img width="60" height="60" alt="a friend"></td>
-			</tr>
-			<tr>
-				<td><img width="60" height="60" alt="a friend"></td>
-				<td><img width="60" height="60" alt="a friend"></td>
-				<td><img width="60" height="60" alt="a friend"></td>
-				<td><img width="60" height="60" alt="a friend"></td>
-			</tr>
-			
-		</table>
+		<img class="img-thumbnail" src="http://placehold.it/100x100" width="100" height="100" alt="a friend">
+		<img class="img-thumbnail" src="http://placehold.it/100x100" width="100" height="100" alt="a friend">
+		<img class="img-thumbnail" src="http://placehold.it/100x100" width="100" height="100" alt="a friend">
+		<img class="img-thumbnail" src="http://placehold.it/100x100" width="100" height="100" alt="a friend">
+		<img class="img-thumbnail" src="http://placehold.it/100x100" width="100" height="100" alt="a friend">
+		<img class="img-thumbnail" src="http://placehold.it/100x100" width="100" height="100" alt="a friend">
+		<img class="img-thumbnail" src="http://placehold.it/100x100" width="100" height="100" alt="a friend">
+		<img class="img-thumbnail" src="http://placehold.it/100x100" width="100" height="100" alt="a friend">
 
 	</div>
 
 	<!-- user recent posts -->
-	<div>
+	<div id="user-recent-posts">
 	<h2>Posts</h2>
 
 		<div>
-		
+
 			<div>date</div>
 
 			<p>
-			Chicken shank landjaeger fatback. Tri-tip pork belly picanha brisket prosciutto. 
-			Beef pastrami turkey picanha turducken biltong short loin beef ribs shoulder 
+			Chicken shank landjaeger fatback. Tri-tip pork belly picanha brisket prosciutto.
+			Beef pastrami turkey picanha turducken biltong short loin beef ribs shoulder
 			fatback andouille flank rump shank tenderloi
 			</p>
 
 		</div>
 
 		<div>
-		
+
 			<div>date</div>
-			
+
 			<p>
-			Chicken shank landjaeger fatback. Tri-tip pork belly picanha brisket prosciutto. 
-			Beef pastrami turkey picanha turducken biltong short loin beef ribs shoulder 
+			Chicken shank landjaeger fatback. Tri-tip pork belly picanha brisket prosciutto.
+			Beef pastrami turkey picanha turducken biltong short loin beef ribs shoulder
 			fatback andouille flank rump shank tenderloi
 			</p>
 
 		</div>
 
 		<div>
-		
+
 			<div>date</div>
-			
+
 			<p>
-			Chicken shank landjaeger fatback. Tri-tip pork belly picanha brisket prosciutto. 
-			Beef pastrami turkey picanha turducken biltong short loin beef ribs shoulder 
+			Chicken shank landjaeger fatback. Tri-tip pork belly picanha brisket prosciutto.
+			Beef pastrami turkey picanha turducken biltong short loin beef ribs shoulder
 			fatback andouille flank rump shank tenderloi
 			</p>
 
@@ -92,5 +74,5 @@
 
 
 	</div>
-	
+
 </div>
