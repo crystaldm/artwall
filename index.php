@@ -1,8 +1,4 @@
-<?php session_start();
-
-include("php/db.php");
-
-?><!DOCTYPE html>
+<?php session_start();include("php/db.php"); ?><!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -49,48 +45,55 @@ include("php/db.php");
       <section>
 
         <article>
-
           <?php
-
-          // //sanitize() function was defined at top of page in db.php
-          // $state = sanitize($_GET['state']);
-          // switch($state) {
-          //   case "home":
-          //     if(is_logged_in()) {
-          //       require("php/home.php");
-          //     } else {
-          //       require("php/welcome.php");
-          //     }
-          //     break;
-          //   case "register":
-          //     if(!is_logged_in()) {
-          //       require("php/registration.php");
-          //     } else {
-          //       require("php/home.php");
-          //     }
-          //     break;
-          //   case "login":
-          //     if(!is_logged_in()) {
-          //       require("php/login.php");
-          //     } else {
-          //       require("php/home.php");
-          //     }
-          //     break;
-          //   case "post":
-          //     if(is_logged_in()) {
-          //       require("php/posts.php");
-          //     }
-          //     break;
-          //   default:
-          //   if($state === false) {
-          //     echo "unrecognized state=".$state;
-          //   }
-          //     break;
-          // }
-
+          //sanitize() function was defined at top of page in db.php
+          $state = sanitize($_GET['state']);
+          switch($state) {
+            case "home":
+              if(is_logged_in()) {
+                require("php/home.php");
+              }
+              else {
+                require("php/welcome.php");
+              }
+              break;
+            case "register":
+              if(!is_logged_in()) {
+                require("php/registration.php");
+              }
+              else {
+                require("php/home.php");
+              }
+              break;
+            case "login":
+              if(!is_logged_in()) {
+                require("php/login.php");
+              }
+              else {
+                require("php/home.php");  
+              }
+              break;
+            case "logout":
+              logout(); //kills the $_SESSION
+              require("php/welcome.php");
+              break;
+            case "post":
+              if(is_logged_in()){
+                require("php/posts.php");
+              }
+              else {
+                require("php/welcome.php");
+              }
+              break;
+            default:
+              if($state === false) {
+                echo "Unrecognized state, unable to clean up state variable";
+              }
+              if($DEBUG) echo "Unrecognized state=".$state;
+              break;
+          }
+          
           ?>
-
-          <?php include("php/home.php"); ?>
 
         </article>
 

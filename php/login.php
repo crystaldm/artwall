@@ -6,21 +6,21 @@
 
 		<!-- login email -->
 		<fieldset>
-			<label for="login-email">Email:</label>
-				<input type="text" name="login-email" id="login-email" value="">
+			<label for="lazy-email">Email:</label>
+				<input type="text" name="lazy-email" id="lazy-email" value="">
 		</fieldset> <!-- end fieldset -->
 
 		<!-- login password -->
 		<fieldset>
 			<label for="login-password">Password:</label>
-				<input type="text" name="login-password" id="login-password" value="">
+				<input type="text" name="lazy-password" id="lazy-password" value="">
 		</fieldset> <!-- end fieldset -->
 
 		<fieldset>
 			<label for="remember-me">
 				<input type="checkbox"> Remember me
 			</label>
-			<button type="button">Login</button>
+			<input type="submit" name="subb" id="subb" value="Login">
 		</fieldset>
 
 	</form> <!-- end login form -->
